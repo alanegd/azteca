@@ -6,6 +6,8 @@ export interface CardProps {
   content: string;
   image?: string;
   outlined?: boolean;
+  backgroundColor?: string;
+  color?: string;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -13,10 +15,15 @@ export const Card: React.FC<CardProps> = ({
   content,
   image,
   outlined = false,
+  backgroundColor,
+  color,
 }) => {
   const mode = outlined ? "card--outlined" : "";
   return (
-    <div className={["card", mode].join(" ")}>
+    <div
+      className={["card", mode].join(" ")}
+      style={{ backgroundColor, color }}
+    >
       {image && (
         <img src={image} alt={title} className="card-image" loading="lazy" />
       )}

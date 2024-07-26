@@ -1,10 +1,10 @@
 .card {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-radius: 8px;
-
   max-width: 300px;
   margin: 16px;
   overflow: auto;
+  background-color: #fff;
 }
 
 .card-image {
@@ -23,7 +23,6 @@
 
 .card-content {
   font-size: 1em;
-  color: #333;
 }
 
 .card--outlined {
