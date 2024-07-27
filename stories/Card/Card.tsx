@@ -2,12 +2,13 @@ import React from "react";
 import "./card.css";
 
 export interface CardProps {
-  title: string;
-  content: string;
+  title?: string;
+  content?: string;
   image?: string;
   outlined?: boolean;
   backgroundColor?: string;
   color?: string;
+  footer?: React.ReactNode;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -17,6 +18,7 @@ export const Card: React.FC<CardProps> = ({
   outlined = false,
   backgroundColor,
   color,
+  footer,
 }) => {
   const mode = outlined ? "card--outlined" : "";
   return (
@@ -27,10 +29,25 @@ export const Card: React.FC<CardProps> = ({
       {image && (
         <img src={image} alt={title} className="card-image" loading="lazy" />
       )}
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p className="card-content">{content}</p>
-      </div>
+      {(title || content) && (
+        <div className="card-body">
+          {title && <h2 className="card-title">{title}</h2>}
+          {content && <p className="card-content">{content}</p>}
+        </div>
+      )}
+      {footer && <footer className="card-footer">{footer}</footer>}
     </div>
   );
 };
+
+export const cardFooterContent = (
+  <div
+    style={{
+      backgroundColor: "orangered",
+      padding: "20px",
+      textAlign: "center",
+    }}
+  >
+    <a>Lorem Ipsum</a>
+  </div>
+);
