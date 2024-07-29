@@ -26,3 +26,10 @@ export const Off: Story = {
   },
 };
 
+export const Locked: Story = {
+  args: {
+    initialOn: true,
+    locked: true
+  }
+};
+

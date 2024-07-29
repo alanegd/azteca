@@ -36,3 +36,11 @@ export const WithFooter: Story = {
     footer: cardFooterContent,
   },
 }
+
+export const Outlined: Story = {
+  args: {
+    title: "Title",
+    content: "Lorem ipsum dolor sit amet",
+    outlined: true
+  }
+};
