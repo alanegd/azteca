@@ -60,6 +60,7 @@ export const Toolbar = ({
           <a href="/" className="toolbar-logo" style={{ color }}>
             {logo}
           </a>
+
           <div className="left-section">
             <ul className="toolbar-navigation-links">
               {links.map((link, index) => (
@@ -72,13 +73,16 @@ export const Toolbar = ({
             </ul>
           </div>
 
-          <div className="right-section">
-            {icons.map((Icon, index) => (
-              <div key={index} className="icon-container">
-                <Icon />
-              </div>
-            ))}
-          </div>
+          {icons.length > 0 && (
+            <div className="right-section">
+              {icons.map((Icon, index) => (
+                <div key={index} className="icon-container">
+                  <Icon />
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="menu-button">
             <button
               id="menu-button"
