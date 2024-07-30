@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./page.css";
-import { Toolbar } from "../../Toolbar/Toolbar";
+import { Toolbar } from "../../components/Toolbar/Toolbar";
 
 type User = {
   name: string;
